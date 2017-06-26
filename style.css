@@ -1,0 +1,121 @@
+*{box-sizing: border-box;}
+
+html,body{
+    height: 100%;
+    width: 100%;
+}
+
+main{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    perspective-origin: top;
+    perspective: 1000px;
+}
+
+#video {
+    min-width: 100%;
+    min-height: 100%;
+    position: fixed;
+    bottom: 0;
+    z-index: -99;
+}
+
+.logo{
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    top:250px;
+    background-image: url("./logo.jpg");
+    z-index:1;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius: 5px;
+}
+
+.container{
+    align-items: center;
+    justify-content: center;
+    width: 350px;
+    height: 350px;
+    position: relative;
+    cursor: pointer;
+    transform-style: preserve-3d;  
+    /*在父容器上设置3d效果*/
+    animation: spin linear 30s infinite;
+    
+}
+
+@keyframes spin{
+    from{
+        transform: rotateY(0); 
+        
+    }
+    to{
+        transform: rotateY(-300deg);
+
+    }
+}
+
+.container:hover{
+  animation-play-state: paused;
+
+}
+
+.eve {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-radius:4px;  
+}
+
+.eve:nth-child(1){
+    transform: rotateY(0) translateZ(350px);
+}
+.eve:nth-child(2){
+    transform: rotateY(60deg) translateZ(350px);
+}
+.eve:nth-child(3){
+    transform: rotateY(120deg) translateZ(350px);
+}
+.eve:nth-child(4){
+    transform: rotateY(180deg) translateZ(350px);
+}
+.eve:nth-child(5){
+    transform: rotateY(240deg) translateZ(350px);
+}
+.eve:nth-child(6){
+    transform: rotateY(300deg) translateZ(350px);
+}
+/*设置初始位置*/
+
+
+.eve.a{
+    background-image: url(./1.jpg);
+}
+
+.eve.b{
+    background-image: url(./2.jpg);
+}
+
+.eve.c{
+    background-image: url(./3.jpg);
+}
+
+.eve.d{
+    background-image: url(./4.jpg);
+}
+
+.eve.e{
+    background-image: url(./5.jpg);
+}
+
+.eve.f{
+    background-image: url(./6.jpg);
+}
